@@ -7,7 +7,7 @@ description: Image and video generation per scene. Approve and regenerate.
 
 The **Generate** step produces an image and then a video for each scene.
 
-![Step 4](/ui-guide/step-4.png)
+![Step 4](/autovio-docs/ui-guide/step-4.png)
 
 ## Per-scene flow
 

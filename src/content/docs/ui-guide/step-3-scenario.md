@@ -7,7 +7,7 @@ description: Scenario generation with LLM. Scene-by-scene image and video prompt
 
 The **Scenario** step generates a scene-by-scene script for the video using the LLM.
 
-![Step 3](/ui-guide/step-3.png)
+![Step 3](/autovio-docs/ui-guide/step-3.png)
 
 ## What you do
 

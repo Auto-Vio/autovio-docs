@@ -7,7 +7,7 @@ description: Timeline editor, text and image overlays, transitions, export.
 
 The **Editor** step is where you arrange clips, add overlays, and export the final video.
 
-![Step 5](/ui-guide/step-5.png)
+![Step 5](/autovio-docs/ui-guide/step-5.png)
 
 ## Timeline
 

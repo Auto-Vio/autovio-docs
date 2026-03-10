@@ -8,14 +8,14 @@ description: Works list and create work in the AutoVio UI. One work = one video 
 When you open a **project**, the **Works** panel shows all works (video pipelines) in that project.
 
 
-![Works panel](/ui-guide/works-panel.png)
+![Works panel](/autovio-docs/ui-guide/works-panel.png)
 
 ## Works list
 
 - Each row is one work: name, last updated, and optionally status or step.
 - Click a work to open it and run through the 5-step pipeline (Init → Analyze → Scenario → Generate → Editor).
 
-![Works panel list](/ui-guide/works-panel-list.png)
+![Works panel list](/autovio-docs/ui-guide/works-panel-list.png)
 
 ## Create work
 
