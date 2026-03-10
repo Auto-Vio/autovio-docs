@@ -7,6 +7,8 @@ description: Image and video generation per scene. Approve and regenerate.
 
 The **Generate** step produces an image and then a video for each scene.
 
+![Step 4](/ui-guide/step-4.png)
+
 ## Per-scene flow
 
 1. **Generate image** — Backend uses the scene’s `image_prompt` (plus style guide prefix and image instruction) and calls the image provider. Status: `generating_image` → `image_ready`.

@@ -7,6 +7,8 @@ description: Scenario generation with LLM. Scene-by-scene image and video prompt
 
 The **Scenario** step generates a scene-by-scene script for the video using the LLM.
 
+![Step 3](/ui-guide/step-3.png)
+
 ## What you do
 
 1. Click **Generate scenario** (or equivalent). The app sends analysis (if any), intent (mode, product, duration, scene count), optional system prompt, knowledge, and **project style guide** to `POST /api/scenario`.

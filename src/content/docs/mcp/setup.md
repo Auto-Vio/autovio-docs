@@ -23,10 +23,10 @@ This compiles the TypeScript sources into `dist/` and prepares the CLI entry poi
 You can run the MCP server directly with Node:
 
 ```bash
-# Use env or default config
+# Default (env or default baseUrl/token)
 node dist/index.js
 
-# With a config file
+# With config file
 node dist/index.js --config examples/config.example.json
 
 # Development (watch)

@@ -7,6 +7,8 @@ description: Init step in AutoVio. Mode, product info, and reference video uploa
 
 The **Init** step is where you configure the work and, for style transfer, upload the reference video.
 
+![Step 1](/ui-guide/step-1.png)
+
 ## Fields
 
 | Field | Description |

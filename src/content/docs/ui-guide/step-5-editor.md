@@ -7,6 +7,8 @@ description: Timeline editor, text and image overlays, transitions, export.
 
 The **Editor** step is where you arrange clips, add overlays, and export the final video.
 
+![Step 5](/ui-guide/step-5.png)
+
 ## Timeline
 
 - **Video track** — One clip per generated scene. You can trim (trim start/end), reorder, and set **transition** and **transition duration** to the next clip (cut, fade, dissolve, wipe, slide).

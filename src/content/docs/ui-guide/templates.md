@@ -7,6 +7,9 @@ description: Editor templates. Save and apply overlay compositions (text + image
 
 **Editor templates** are project-level reusable overlay compositions. You save the current editor’s text and image overlays (and optionally export settings) as a template, then apply it to any work in the same project.
 
+![Templates](/ui-guide/templates.png)
+
+
 ## Save as template
 
 - In the Editor step, arrange text and image overlays and optionally set export settings.

@@ -7,6 +7,8 @@ description: Projects list, create project, and project settings in the AutoVio 
 
 The **Projects** panel is where you see all your projects and create or manage them.
 
+![Projects panel](/ui-guide/projects-panel.png)
+
 ## Projects list
 
 - Lists all projects for the current user (name, last updated).
