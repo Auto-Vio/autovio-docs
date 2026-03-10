@@ -1,0 +1,16 @@
+/* AutoVio Docs custom branding */
+
+/* Starlight site title in the header */
+.sl-logo,
+.sl-logo a,
+.sl-logo span,
+header .site-title,
+header .site-title a {
+  /* Exact Tailwind colors: from-purple-400 (#c4b5fd) to-pink-500 (#ec4899) */
+  background-image: linear-gradient(to right, #c4b5fd, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 700; /* match font-bold */
+}
+
