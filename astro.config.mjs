@@ -7,10 +7,33 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'AutoVio Docs',
-      description: 'AI-powered video generation pipeline. Create videos from text with Gemini, OpenAI, Claude, and more.',
+      description: 'AutoVio is an open-source AI video generation pipeline. Create videos from text prompts using Gemini, OpenAI, Claude, DALL-E, Veo, and Runway. Full REST API and MCP server for Claude Desktop and Cursor.',
       defaultLocale: 'root',
+      head: [
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'keywords',
+            content: 'AI video generation, text to video, video automation, Gemini, OpenAI, Claude, DALL-E, Veo, Runway, MCP server, video API, open source',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            property: 'og:image',
+            content: 'https://auto-vio.github.io/autovio-docs/og-image.png',
+          },
+        },
+        {
+          tag: 'meta',
+          attrs: {
+            name: 'twitter:card',
+            content: 'summary_large_image',
+          },
+        },
+      ],
       social: [
-        { icon: 'github', label: 'GitHub', href: 'https://github.com/your-repo/autovio' },
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/Auto-Vio/autovio' },
       ],
       sidebar: [
         {
