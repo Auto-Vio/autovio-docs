@@ -34,6 +34,6 @@ The scene’s `negative_prompt` is sent as-is to the image provider (when suppor
 
 ## See also
 
-- [Video Prompt](/system-prompts/video-prompt/) — Same idea for video
-- [Customization](/system-prompts/customization/)
-- [API: Generate image](/api/ai-endpoints/)
+- [Video Prompt](../system-prompts/video-prompt/) — Same idea for video
+- [Customization](../system-prompts/customization/)
+- [API: Generate image](../api/ai-endpoints/)

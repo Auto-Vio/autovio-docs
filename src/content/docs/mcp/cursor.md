@@ -21,7 +21,7 @@ node /path/to/AutoVio-MCP/dist/index.js \
   --video-model veo-3.0-generate-001 --video-api-key YOUR_VIDEO_KEY
 ```
 
-This is the same pattern used in the Claude Desktop example; see [MCP Setup](/mcp/setup/) and [Claude Desktop](/mcp/claude-desktop/).
+This is the same pattern used in the Claude Desktop example; see [MCP Setup](../mcp/setup/) and [Claude Desktop](../mcp/claude-desktop/).
 
 ## Environment variables
 
@@ -44,5 +44,5 @@ Once the IDE is configured to start the AutoVio MCP server:
 - It can call tools like `autovio_projects_create`, `autovio_works_generate_scenario`, or `autovio_ai_generate_image`.
 - Each tool returns JSON text content that you can inspect or pipe into further actions.
 
-Refer to your IDE’s MCP documentation for the exact configuration format, and use [MCP Tools Reference](/mcp/tools-reference/) for the list of available tools and parameters.
+Refer to your IDE’s MCP documentation for the exact configuration format, and use [MCP Tools Reference](../mcp/tools-reference/) for the list of available tools and parameters.
 

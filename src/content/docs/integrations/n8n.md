@@ -10,7 +10,7 @@ You can call the **AutoVio REST API** from n8n to automate video creation workfl
 ## Prerequisites
 
 - AutoVio is running (backend on `http://localhost:3001` or your base URL).
-- You have an **API token** with the required scopes (see [Authentication](/api/authentication/)).
+- You have an **API token** with the required scopes (see [Authentication](../api/authentication/)).
 
 ## Create an API token
 
@@ -81,7 +81,7 @@ Store the `workId` from the response for later steps.
 Call `POST /api/projects/:projectId/works/:workId/scenario` with headers:
 
 - `Authorization: Bearer <token>`
-- `x-llm-provider`, `x-model-id`, `x-api-key` as described in [AI Endpoints](/api/ai-endpoints/).
+- `x-llm-provider`, `x-model-id`, `x-api-key` as described in [AI Endpoints](../api/ai-endpoints/).
 
 This updates `work.scenes` and returns the generated scenes.
 
@@ -105,7 +105,7 @@ The response includes `imageUrl` and `videoUrl` for that scene.
 
 ## See also
 
-- [API Overview](/api/overview/)
-- [Works API](/api/works/)
-- [AI Endpoints](/api/ai-endpoints/)
+- [API Overview](../api/overview/)
+- [Works API](../api/works/)
+- [AI Endpoints](../api/ai-endpoints/)
 

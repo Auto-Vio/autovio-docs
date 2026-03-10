@@ -19,7 +19,7 @@ description: Editor templates. Save and apply overlay compositions (text + image
   - **Image overlays** — assetId, size, position, opacity, rotation, timing.
   - **Export settings** (optional) — width, height, fps.
 
-Templates are stored in MongoDB; list/create/update/delete via the UI or [Templates API](/api/templates/).
+Templates are stored in MongoDB; list/create/update/delete via the UI or [Templates API](../api/templates/).
 
 ## Apply template
 
@@ -38,5 +38,5 @@ Templates can contain placeholders in text, e.g. `{{product_name}}`. When applyi
 
 ## See also
 
-- [Step 5: Editor](/ui-guide/step-5-editor/) — Timeline and overlays
-- [API: Templates](/api/templates/) — List, create, get, update, delete, apply
+- [Step 5: Editor](../ui-guide/step-5-editor/) — Timeline and overlays
+- [API: Templates](../api/templates/) — List, create, get, update, delete, apply

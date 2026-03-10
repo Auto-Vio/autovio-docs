@@ -99,7 +99,7 @@ Used on:
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| assetId | string | Yes | Project asset ID (see [Assets](/api/assets/)). |
+| assetId | string | Yes | Project asset ID (see [Assets](../api/assets/)). |
 | width | number | Yes | Width in pixels. |
 | height | number | Yes | Height in pixels. |
 | centerX | number | Yes | X position (center-relative). |
@@ -134,11 +134,11 @@ Top-level structure stored on a work:
 ## Where it is stored
 
 - On the **Work** model (`works.editorState`).
-- Serialized via the [Works API](/api/works/) when you `PUT` a work.
+- Serialized via the [Works API](../api/works/) when you `PUT` a work.
 - Populated by the editor UI when saving the timeline.
 
 ## See also
 
-- [UI Guide: Step 5 – Editor](/ui-guide/step-5-editor/)
-- [API: Works](/api/works/)
+- [UI Guide: Step 5 – Editor](../ui-guide/step-5-editor/)
+- [API: Works](../api/works/)
 

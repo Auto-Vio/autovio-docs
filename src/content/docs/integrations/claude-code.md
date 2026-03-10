@@ -21,7 +21,7 @@ node /path/to/AutoVio-MCP/dist/index.js \
   --video-model veo-3.0-generate-001 --video-api-key YOUR_VIDEO_KEY
 ```
 
-Environment variables (`AUTOVIO_BASE_URL`, `AUTOVIO_API_TOKEN`, and the model/key envs) can also be used as described in [MCP Setup](/mcp/setup/).
+Environment variables (`AUTOVIO_BASE_URL`, `AUTOVIO_API_TOKEN`, and the model/key envs) can also be used as described in [MCP Setup](../mcp/setup/).
 
 ## Using tools from the editor
 
@@ -32,11 +32,11 @@ Once Claude Code is connected to the MCP server, it can:
 - Generate scenarios and scenes (`autovio_works_generate_scenario`, `autovio_works_generate_scene`).
 - Call direct AI tools (`autovio_ai_analyze_video`, `autovio_ai_generate_scenario`, `autovio_ai_generate_image`, `autovio_ai_generate_video`).
 
-Use [MCP Tools Reference](/mcp/tools-reference/) for arguments and expected outputs, and Claude Code’s documentation for how to invoke MCP tools from within the editor.
+Use [MCP Tools Reference](../mcp/tools-reference/) for arguments and expected outputs, and Claude Code’s documentation for how to invoke MCP tools from within the editor.
 
 ## See also
 
-- [MCP Overview](/mcp/overview/)
-- [Cursor IDE](/mcp/cursor/)
-- [MCP Workflows](/mcp/workflows/)
+- [MCP Overview](../mcp/overview/)
+- [Cursor IDE](../mcp/cursor/)
+- [MCP Workflows](../mcp/workflows/)
 

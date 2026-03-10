@@ -140,7 +140,7 @@ curl -X POST "https://api.autovio.com/api/generate/image" \
 
 ## See also
 
-- [API Overview](/api/overview/) — Provider headers summary
-- [AI Endpoints](/api/ai-endpoints/) — Analyze, scenario, generate image/video
-- [Concepts: Providers](/concepts/providers/)
+- [API Overview](../api/overview/) — Provider headers summary
+- [AI Endpoints](../api/ai-endpoints/) — Analyze, scenario, generate image/video
+- [Concepts: Providers](../concepts/providers/)
 

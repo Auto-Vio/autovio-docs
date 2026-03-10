@@ -18,7 +18,7 @@ A **project** is the top-level container. It holds:
 - **Project assets** — Images, video, audio, fonts (e.g. logos, watermarks) reusable across works
 - **Editor templates** — Reusable overlay compositions (text + image) that can be applied to any work in the project
 
-Projects are scoped to a user. You list, create, update, and delete projects via the UI or [Projects API](/api/projects/).
+Projects are scoped to a user. You list, create, update, and delete projects via the UI or [Projects API](../api/projects/).
 
 ## Works
 
@@ -48,5 +48,5 @@ When you create a work, it inherits the project’s system prompt, analyzer prom
 
 ## See also
 
-- [Pipeline Overview](/concepts/pipeline-overview/) — The 5 steps in detail
-- [API: Projects](/api/projects/), [API: Works](/api/works/)
+- [Pipeline Overview](../concepts/pipeline-overview/) — The 5 steps in detail
+- [API: Projects](../api/projects/), [API: Works](../api/works/)

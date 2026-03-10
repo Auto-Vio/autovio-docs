@@ -44,7 +44,7 @@ From the MCP client’s perspective, tools are grouped roughly as:
 | Providers | `autovio_providers_list` | List AI providers and models. |
 | Templates | `autovio_templates_list`, `autovio_templates_get`, `autovio_templates_create`, `autovio_templates_update`, `autovio_templates_delete` | Manage editor templates. |
 
-See [MCP Tools Reference](/mcp/tools-reference/) for full input schemas and usage examples.
+See [MCP Tools Reference](../mcp/tools-reference/) for full input schemas and usage examples.
 
 ## When to use MCP vs REST API
 
@@ -65,7 +65,7 @@ Use the **REST API** when:
 
 ## See also
 
-- [MCP Setup](/mcp/setup/)
-- [MCP Tools Reference](/mcp/tools-reference/)
-- [API Overview](/api/overview/)
+- [MCP Setup](../mcp/setup/)
+- [MCP Tools Reference](../mcp/tools-reference/)
+- [API Overview](../api/overview/)
 

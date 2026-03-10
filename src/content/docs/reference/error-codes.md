@@ -72,7 +72,7 @@ Each endpoint documents which status codes it can return and when it uses the `E
 
 ## See also
 
-- [API Overview](/api/overview/)
-- [Authentication](/api/authentication/)
-- [Projects API](/api/projects/), [Works API](/api/works/)
+- [API Overview](../api/overview/)
+- [Authentication](../api/authentication/)
+- [Projects API](../api/projects/), [Works API](../api/works/)
 

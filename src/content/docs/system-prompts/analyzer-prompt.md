@@ -41,4 +41,4 @@ No extra text — only the JSON. The backend parses this into an **AnalysisResul
 
 The exact default text is in `packages/shared/src/types/project.ts` as `DEFAULT_ANALYZER_PROMPT`. Projects can override via `analyzerPrompt`.
 
-See [Step 2: Analyze](/ui-guide/step-2-analyze/) and [Customization](/system-prompts/customization/).
+See [Step 2: Analyze](../ui-guide/step-2-analyze/) and [Customization](../system-prompts/customization/).

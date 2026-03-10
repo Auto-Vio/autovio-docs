@@ -9,7 +9,7 @@ This guide walks you through creating your first video with AutoVio in a few min
 
 ## Prerequisites
 
-- AutoVio is [installed](/getting-started/installation/) and running (backend on port 3001, frontend on 5173).
+- AutoVio is [installed](../getting-started/installation/) and running (backend on port 3001, frontend on 5173).
 - You have at least one AI provider configured (e.g. Gemini API key in Settings).
 
 ## Step 1: Create a project
@@ -52,6 +52,6 @@ If you chose **style transfer**, upload a reference video in the Init step. Then
 
 ## Next Steps
 
-- [Concepts: Projects & Works](/concepts/projects-and-works/) — Hierarchy and data model
-- [Pipeline Overview](/concepts/pipeline-overview/) — The 5-step flow in detail
-- [UI Guide](/ui-guide/projects-panel/) — Panels and steps explained
+- [Concepts: Projects & Works](../concepts/projects-and-works/) — Hierarchy and data model
+- [Pipeline Overview](../concepts/pipeline-overview/) — The 5-step flow in detail
+- [UI Guide](../ui-guide/projects-panel/) — Panels and steps explained

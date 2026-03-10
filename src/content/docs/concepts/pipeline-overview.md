@@ -85,5 +85,5 @@ All of this is persisted on the **Work** document so you can leave and come back
 
 ## See also
 
-- [Generation Modes](/concepts/modes/) — style_transfer vs content_remix
-- [UI Guide](/ui-guide/step-1-init/) — Step-by-step UI
+- [Generation Modes](../concepts/modes/) — style_transfer vs content_remix
+- [UI Guide](../ui-guide/step-1-init/) — Step-by-step UI

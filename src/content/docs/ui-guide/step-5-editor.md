@@ -28,7 +28,7 @@ The **Templates** panel lets you:
 - **Save current as template** — Store current text + image overlays (and optional export settings) as a project-level template with relative timing.
 - **Apply template** — Add a template’s overlays to the current timeline. You can scale timing by video duration and use placeholders (e.g. `{{product_name}}`).
 
-See [Templates](/ui-guide/templates/).
+See [Templates](../ui-guide/templates/).
 
 ## Preview
 
@@ -46,5 +46,5 @@ Preview renders at export resolution (from export settings). Text and image over
 
 ## See also
 
-- [Templates](/ui-guide/templates/)
-- [API: Export](/api/ai-endpoints/#export), [Reference: EditorState](/reference/editor-state-schema/)
+- [Templates](../ui-guide/templates/)
+- [API: Export](../api/ai-endpoints/#export), [Reference: EditorState](../reference/editor-state-schema/)

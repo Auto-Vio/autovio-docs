@@ -39,6 +39,6 @@ Progress is saved automatically so you can leave and resume later.
 
 ## See also
 
-- [Step 1: Init](/ui-guide/step-1-init/) — First step details
-- [Pipeline Overview](/concepts/pipeline-overview/)
-- [API: Works](/api/works/)
+- [Step 1: Init](../ui-guide/step-1-init/) — First step details
+- [Pipeline Overview](../concepts/pipeline-overview/)
+- [API: Works](../api/works/)

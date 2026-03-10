@@ -85,7 +85,7 @@ These analysis scenes can be passed into scenario generation (as `analysis`) to 
 
 ## See also
 
-- [Pipeline Overview](/concepts/pipeline-overview/)
-- [UI Guide: Scenario](/ui-guide/step-3-scenario/)
-- [AI Endpoints](/api/ai-endpoints/)
+- [Pipeline Overview](../concepts/pipeline-overview/)
+- [UI Guide: Scenario](../ui-guide/step-3-scenario/)
+- [AI Endpoints](../api/ai-endpoints/)
 

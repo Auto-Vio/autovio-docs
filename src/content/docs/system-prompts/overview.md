@@ -39,4 +39,4 @@ When a project (or work) has a **style guide** (tone, color_palette, tempo, came
 - **Work settings** — Override system prompt and image/video instructions per work.
 - **API** — Same fields can be sent in create/update project, create/update work, and in analyze/scenario/generate request bodies or headers where supported.
 
-See [Scenario Prompt](/system-prompts/scenario-prompt/), [Analyzer Prompt](/system-prompts/analyzer-prompt/), [Image Prompt](/system-prompts/image-prompt/), [Video Prompt](/system-prompts/video-prompt/), and [Customization](/system-prompts/customization/).
+See [Scenario Prompt](../system-prompts/scenario-prompt/), [Analyzer Prompt](../system-prompts/analyzer-prompt/), [Image Prompt](../system-prompts/image-prompt/), [Video Prompt](../system-prompts/video-prompt/), and [Customization](../system-prompts/customization/).

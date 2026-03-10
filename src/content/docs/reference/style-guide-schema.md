@@ -39,7 +39,7 @@ These fields are exposed in the API schema as `StyleGuide` (see `components.sche
 
 ## Where it is used
 
-- **Project** (`project.styleGuide`) — Set via [Projects API](/api/projects/) and used across all works.
+- **Project** (`project.styleGuide`) — Set via [Projects API](../api/projects/) and used across all works.
 - **Scenario** (`styleGuide` in scenario request) — Appended to the scenario system prompt as "Project Style Guide".
 - **Image generation** — Backend builds a style prefix in `prompts/image.ts` using tone, colors, and tempo.
 - **Video generation** — Backend builds a style prefix in `prompts/video.ts` using camera_style, tempo, and tone.
@@ -53,6 +53,6 @@ The shared library also provides utility functions:
 
 ## See also
 
-- [Concepts: Projects and Works](/concepts/projects-and-works/)
-- [System Prompts Overview](/system-prompts/overview/)
+- [Concepts: Projects and Works](../concepts/projects-and-works/)
+- [System Prompts Overview](../system-prompts/overview/)
 

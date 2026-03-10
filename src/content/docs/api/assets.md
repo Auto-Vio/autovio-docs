@@ -201,7 +201,7 @@ Be careful: works and templates that referenced this asset will no longer be abl
 
 ## See also
 
-- [UI Guide: Step 5 – Editor](/ui-guide/step-5-editor/)
-- [UI Guide: Templates](/ui-guide/templates/)
-- [Templates API](/api/templates/)
+- [UI Guide: Step 5 – Editor](../ui-guide/step-5-editor/)
+- [UI Guide: Templates](../ui-guide/templates/)
+- [Templates API](../api/templates/)
 

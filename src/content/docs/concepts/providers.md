@@ -16,7 +16,7 @@ AutoVio delegates different tasks to different AI providers. You choose the prov
 | **Image** | Generate a single image from a text prompt | Gemini (Imagen), DALL-E |
 | **Video** | Image-to-video (animate an image into a clip) | Gemini (Veo), Runway |
 
-The backend registry can include more providers over time (e.g. Luma, Kling, Ideogram, Flux); the [API](/api/providers/) and UI list what is available.
+The backend registry can include more providers over time (e.g. Luma, Kling, Ideogram, Flux); the [API](../api/providers/) and UI list what is available.
 
 ## How providers are selected
 
@@ -35,6 +35,6 @@ The backend registry can include more providers over time (e.g. Luma, Kling, Ide
 
 ## See also
 
-- [API: Providers](/api/providers/) — List providers endpoint
-- [AI Endpoints](/api/ai-endpoints/) — Analyze, scenario, generate image/video
-- [MCP Setup](/mcp/setup/) — Configuring providers for MCP
+- [API: Providers](../api/providers/) — List providers endpoint
+- [AI Endpoints](../api/ai-endpoints/) — Analyze, scenario, generate image/video
+- [MCP Setup](../mcp/setup/) — Configuring providers for MCP

@@ -116,5 +116,5 @@ The backend uses FFmpeg to composite video clips (with transitions), text overla
 
 ## See also
 
-- [Providers](/api/providers/) — List providers
-- [System Prompts](/system-prompts/overview/)
+- [Providers](../api/providers/) — List providers
+- [System Prompts](../system-prompts/overview/)

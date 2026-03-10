@@ -18,7 +18,7 @@ Most endpoints require authentication:
 - **Web UI**: Uses **JWT** (access token from login/register). The frontend sends `Authorization: Bearer <accessToken>`.
 - **API tokens**: For server-to-server or MCP, create an **API token** in the UI (or via `POST /api/tokens`) with scopes (e.g. `projects:read`, `works:write`, `ai:generate`). Send it as `Authorization: Bearer <token>`.
 
-See [Authentication](/api/authentication/) for login, register, refresh, and token scopes.
+See [Authentication](../api/authentication/) for login, register, refresh, and token scopes.
 
 ## Provider headers (AI endpoints)
 
@@ -39,13 +39,13 @@ The backend forwards the key to the external provider; it does not store provide
 
 | Group | Description |
 |-------|-------------|
-| [Authentication](/api/authentication/) | Register, login, refresh, me |
-| [Projects](/api/projects/) | CRUD projects |
-| [Works](/api/works/) | CRUD works, media (reference, scene image/video) |
-| [AI Endpoints](/api/ai-endpoints/) | Analyze, scenario, generate image/video, export |
-| [Templates](/api/templates/) | List, create, get, update, delete, apply templates |
-| [Assets](/api/assets/) | List, upload, get, update, delete project assets |
-| [Providers](/api/providers/) | List available AI providers (no auth) |
+| [Authentication](../api/authentication/) | Register, login, refresh, me |
+| [Projects](../api/projects/) | CRUD projects |
+| [Works](../api/works/) | CRUD works, media (reference, scene image/video) |
+| [AI Endpoints](../api/ai-endpoints/) | Analyze, scenario, generate image/video, export |
+| [Templates](../api/templates/) | List, create, get, update, delete, apply templates |
+| [Assets](../api/assets/) | List, upload, get, update, delete project assets |
+| [Providers](../api/providers/) | List available AI providers (no auth) |
 
 ## OpenAPI
 
@@ -53,5 +53,5 @@ When the backend is running, OpenAPI documentation is available at `/api/docs` (
 
 ## See also
 
-- [Authentication](/api/authentication/)
-- [Projects](/api/projects/), [Works](/api/works/), [AI Endpoints](/api/ai-endpoints/)
+- [Authentication](../api/authentication/)
+- [Projects](../api/projects/), [Works](../api/works/), [AI Endpoints](../api/ai-endpoints/)

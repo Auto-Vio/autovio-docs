@@ -358,7 +358,7 @@ Delete a template from a project.
 
 ## See also
 
-- [MCP Overview](/mcp/overview/)
-- [MCP Setup](/mcp/setup/)
-- [Workflows](/mcp/workflows/)
+- [MCP Overview](../mcp/overview/)
+- [MCP Setup](../mcp/setup/)
+- [Workflows](../mcp/workflows/)
 

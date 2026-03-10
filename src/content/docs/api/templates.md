@@ -88,7 +88,7 @@ Each **TemplateImageOverlay**:
 | Field | Type | Description |
 |-------|------|-------------|
 | id | string | Overlay ID inside the template. |
-| assetId | string | Project asset ID (see [Assets](/api/assets/)). |
+| assetId | string | Project asset ID (see [Assets](../api/assets/)). |
 | width | number | Width in pixels. |
 | height | number | Height in pixels. |
 | centerX | number | X position (center-relative). |
@@ -298,7 +298,7 @@ If a placeholder is not provided, it remains as-is in the overlay text.
 
 ## See also
 
-- [UI Guide: Templates](/ui-guide/templates/)
-- [Editor & Export](/ui-guide/step-5-editor/)
-- [Assets API](/api/assets/) — Assets referenced by templates
+- [UI Guide: Templates](../ui-guide/templates/)
+- [Editor & Export](../ui-guide/step-5-editor/)
+- [Assets API](../api/assets/) — Assets referenced by templates
 

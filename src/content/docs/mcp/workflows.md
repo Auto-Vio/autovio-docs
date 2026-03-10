@@ -9,7 +9,7 @@ This page shows example workflows using the AutoVio MCP tools to drive the video
 
 All examples assume:
 
-- The AutoVio MCP server is running and configured (see [MCP Setup](/mcp/setup/)).
+- The AutoVio MCP server is running and configured (see [MCP Setup](../mcp/setup/)).
 - The MCP client can call tools with a JSON `args` object and display JSON text results.
 
 ## Workflow 1 – Create project and work
@@ -172,7 +172,7 @@ The response is the updated work with merged editor state (timeline, overlays, e
 
 ## See also
 
-- [Quick Start](/getting-started/quickstart/) — UI-based pipeline
-- [AI Endpoints](/api/ai-endpoints/) — Underlying REST API
-- [MCP Tools Reference](/mcp/tools-reference/)
+- [Quick Start](../getting-started/quickstart/) — UI-based pipeline
+- [AI Endpoints](../api/ai-endpoints/) — Underlying REST API
+- [MCP Tools Reference](../mcp/tools-reference/)
 

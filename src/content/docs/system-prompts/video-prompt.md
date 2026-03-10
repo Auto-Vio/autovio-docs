@@ -34,6 +34,6 @@ So the generated motion matches the project’s style.
 
 ## See also
 
-- [Image Prompt](/system-prompts/image-prompt/)
-- [Customization](/system-prompts/customization/)
-- [API: Generate video](/api/ai-endpoints/)
+- [Image Prompt](../system-prompts/image-prompt/)
+- [Customization](../system-prompts/customization/)
+- [API: Generate video](../api/ai-endpoints/)

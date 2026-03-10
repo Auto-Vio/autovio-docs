@@ -46,4 +46,4 @@ If a work leaves these empty, the project (or shared) defaults are used.
 3. **Work** — Override per video pipeline.
 4. **Request** — Override per API call when the endpoint supports it.
 
-See [Overview](/system-prompts/overview/) and [API: Projects](/api/projects/), [API: Works](/api/works/).
+See [Overview](../system-prompts/overview/) and [API: Projects](../api/projects/), [API: Works](../api/works/).

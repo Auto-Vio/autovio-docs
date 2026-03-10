@@ -36,4 +36,4 @@ The **Init** step is where you configure the work and, for style transfer, uploa
 
 Go to **Step 2: Analyze** to run vision AI on the reference video (or skip to **Step 3: Scenario** if you have no reference).
 
-See [Pipeline Overview](/concepts/pipeline-overview/) and [Step 2: Analyze](/ui-guide/step-2-analyze/).
+See [Pipeline Overview](../concepts/pipeline-overview/) and [Step 2: Analyze](../ui-guide/step-2-analyze/).

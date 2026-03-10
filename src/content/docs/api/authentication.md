@@ -104,5 +104,5 @@ Use the token as: `Authorization: Bearer <token>`.
 
 ## See also
 
-- [API Overview](/api/overview/)
-- [MCP Setup](/mcp/setup/) — Using a token with the MCP server
+- [API Overview](../api/overview/)
+- [MCP Setup](../mcp/setup/) — Using a token with the MCP server

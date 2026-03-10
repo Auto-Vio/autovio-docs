@@ -51,7 +51,7 @@ Set at least:
 - `MONGODB_URI` — MongoDB connection string
 - `JWT_SECRET` — Secret for JWT tokens (use a strong value in production)
 
-See [Configuration](/getting-started/configuration/) for all environment variables.
+See [Configuration](../getting-started/configuration/) for all environment variables.
 
 ### 3. Run the application
 
@@ -77,5 +77,5 @@ Open [http://localhost:5173](http://localhost:5173) in your browser. Register or
 
 ## Next Steps
 
-- [Quick Start](/getting-started/quickstart/) — Create your first video
-- [Configuration](/getting-started/configuration/) — Environment variables reference
+- [Quick Start](../getting-started/quickstart/) — Create your first video
+- [Configuration](../getting-started/configuration/) — Environment variables reference

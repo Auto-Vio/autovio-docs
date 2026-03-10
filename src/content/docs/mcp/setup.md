@@ -144,13 +144,13 @@ The server derives the provider ID from the model name (e.g. `gemini`, `claude`,
 ## Requirements
 
 - Node.js >= 18 (enforced by `engines.node` in `package.json`)
-- A running AutoVio backend (see [Installation](/getting-started/installation/))
+- A running AutoVio backend (see [Installation](../getting-started/installation/))
 - An AutoVio API token or user credentials
 - API keys for the AI providers you want to use
 
 ## See also
 
-- [MCP Overview](/mcp/overview/)
-- [Claude Desktop Integration](/mcp/claude-desktop/)
-- [MCP Tools Reference](/mcp/tools-reference/)
+- [MCP Overview](../mcp/overview/)
+- [Claude Desktop Integration](../mcp/claude-desktop/)
+- [MCP Tools Reference](../mcp/tools-reference/)
 

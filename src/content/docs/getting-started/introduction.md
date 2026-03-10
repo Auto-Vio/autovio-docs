@@ -28,6 +28,6 @@ You can use the **web UI**, the **REST API**, or the **MCP server** (for Claude 
 
 ## Next Steps
 
-- [Installation](/getting-started/installation/) — Set up AutoVio locally
-- [Quick Start](/getting-started/quickstart/) — Create your first video in minutes
-- [Concepts](/concepts/projects-and-works/) — Projects, works, and the 5-step pipeline
+- [Installation](../getting-started/installation/) — Set up AutoVio locally
+- [Quick Start](../getting-started/quickstart/) — Create your first video in minutes
+- [Concepts](../concepts/projects-and-works/) — Projects, works, and the 5-step pipeline

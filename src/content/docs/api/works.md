@@ -56,5 +56,5 @@ Includes: id, projectId, name, mode, productName, productDescription, targetAudi
 
 ## See also
 
-- [Concepts: Projects & Works](/concepts/projects-and-works/)
-- [AI Endpoints](/api/ai-endpoints/) — Analyze, scenario, generate, export
+- [Concepts: Projects & Works](../concepts/projects-and-works/)
+- [AI Endpoints](../api/ai-endpoints/) — Analyze, scenario, generate, export

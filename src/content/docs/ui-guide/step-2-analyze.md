@@ -34,4 +34,4 @@ The analyze request uses vision provider headers, e.g.:
 
 Use the analysis in **Step 3: Scenario**. The scenario API accepts the analysis object so the LLM can generate scenes that match the reference’s style and structure.
 
-See [Scenario step](/ui-guide/step-3-scenario/) and [AI Endpoints](/api/ai-endpoints/).
+See [Scenario step](../ui-guide/step-3-scenario/) and [AI Endpoints](../api/ai-endpoints/).

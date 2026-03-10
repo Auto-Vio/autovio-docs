@@ -42,4 +42,4 @@ Return **only** a JSON array of objects with:
 
 The exact default text is in `packages/shared/src/types/project.ts` as `DEFAULT_SCENARIO_SYSTEM_PROMPT`. Projects and works can override it via `systemPrompt`.
 
-See [Customization](/system-prompts/customization/) and [Scenario step](/ui-guide/step-3-scenario/).
+See [Customization](../system-prompts/customization/) and [Scenario step](../ui-guide/step-3-scenario/).

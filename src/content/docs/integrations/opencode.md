@@ -21,7 +21,7 @@ node /path/to/AutoVio-MCP/dist/index.js \
   --video-model veo-3.0-generate-001 --video-api-key YOUR_VIDEO_KEY
 ```
 
-See [MCP Setup](/mcp/setup/) for all supported flags and environment variables.
+See [MCP Setup](../mcp/setup/) for all supported flags and environment variables.
 
 ## Environment-based configuration
 
@@ -38,7 +38,7 @@ You can add additional env variables for vision, image, and video models and key
 
 ## Available tools
 
-Once OpenCode connects to the MCP server, it can use the same tools documented in [MCP Tools Reference](/mcp/tools-reference/), including:
+Once OpenCode connects to the MCP server, it can use the same tools documented in [MCP Tools Reference](../mcp/tools-reference/), including:
 
 - `autovio_projects_*` — manage projects
 - `autovio_works_*` — manage works and run the pipeline
@@ -50,7 +50,7 @@ Refer to OpenCode’s MCP documentation for how to register an MCP server; the A
 
 ## See also
 
-- [MCP Overview](/mcp/overview/)
-- [Claude Desktop](/mcp/claude-desktop/)
-- [MCP Tools Reference](/mcp/tools-reference/)
+- [MCP Overview](../mcp/overview/)
+- [Claude Desktop](../mcp/claude-desktop/)
+- [MCP Tools Reference](../mcp/tools-reference/)
 

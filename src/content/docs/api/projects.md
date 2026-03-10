@@ -56,5 +56,5 @@ Send the fields you want to change (e.g. `name`, `styleGuide`, `systemPrompt`). 
 
 ## See also
 
-- [Concepts: Projects & Works](/concepts/projects-and-works/)
-- [Assets](/api/assets/), [Templates](/api/templates/)
+- [Concepts: Projects & Works](../concepts/projects-and-works/)
+- [Assets](../api/assets/), [Templates](../api/templates/)

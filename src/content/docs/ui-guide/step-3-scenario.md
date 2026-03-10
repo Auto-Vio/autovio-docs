@@ -38,10 +38,10 @@ Each scene has:
 
 ## Default behavior
 
-The default scenario system prompt (see [Scenario Prompt](/system-prompts/scenario-prompt/)) instructs the LLM to produce **photorealistic** content unless the style guide asks for something else. Image prompts are written like “photo of…”, “shot on…”; video prompts describe realistic motion.
+The default scenario system prompt (see [Scenario Prompt](../system-prompts/scenario-prompt/)) instructs the LLM to produce **photorealistic** content unless the style guide asks for something else. Image prompts are written like “photo of…”, “shot on…”; video prompts describe realistic motion.
 
 ## Next step
 
 In **Step 4: Generate** you generate an image for each scene from `image_prompt`, then a video from that image using `video_prompt`.
 
-See [Step 4: Generate](/ui-guide/step-4-generate/) and [System Prompts: Scenario](/system-prompts/scenario-prompt/).
+See [Step 4: Generate](../ui-guide/step-4-generate/) and [System Prompts: Scenario](../system-prompts/scenario-prompt/).

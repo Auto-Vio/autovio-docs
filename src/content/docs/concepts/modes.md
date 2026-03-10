@@ -48,4 +48,4 @@ AutoVio supports two modes for how a video is conceived and styled: **style_tran
 
 When creating or updating a work, set `mode` to `"style_transfer"` or `"content_remix"`. The same field is used in scenario and analyze requests so the backend and prompts can adapt (e.g. analyzer prompt focuses on style for style_transfer and on content/story for content_remix).
 
-See [Projects & Works](/concepts/projects-and-works/) and [Pipeline Overview](/concepts/pipeline-overview/).
+See [Projects & Works](../concepts/projects-and-works/) and [Pipeline Overview](../concepts/pipeline-overview/).

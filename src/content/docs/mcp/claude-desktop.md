@@ -80,7 +80,7 @@ You can add additional env keys such as:
 - `AUTOVIO_VIDEO_MODEL`, `AUTOVIO_VIDEO_API_KEY`
 - `AUTOVIO_LOG_LEVEL`
 
-The MCP server merges CLI flags, env vars, config file, and defaults as described in [MCP Setup](/mcp/setup/).
+The MCP server merges CLI flags, env vars, config file, and defaults as described in [MCP Setup](../mcp/setup/).
 
 ## Using tools in Claude
 
@@ -89,5 +89,5 @@ Once configured and running:
 - Claude Desktop will show an **AutoVio** MCP server entry.
 - You can call tools like `autovio_projects_create`, `autovio_works_create`, or `autovio_works_generate_scene` from within a chat.
 
-See [MCP Tools Reference](/mcp/tools-reference/) for a complete list of tools and parameters.
+See [MCP Tools Reference](../mcp/tools-reference/) for a complete list of tools and parameters.
 

@@ -41,10 +41,10 @@ Assets are reusable in any work in that project (e.g. as image overlays in the e
 
 ## Templates
 
-Editor templates are defined at the project level. In the editor you can open the **Templates** panel to list, create, apply, or delete templates. See [Templates](/ui-guide/templates/).
+Editor templates are defined at the project level. In the editor you can open the **Templates** panel to list, create, apply, or delete templates. See [Templates](../ui-guide/templates/).
 
 ## See also
 
-- [Works Panel](/ui-guide/works-panel/) — Works inside a project
-- [Concepts: Projects & Works](/concepts/projects-and-works/)
-- [API: Projects](/api/projects/), [API: Assets](/api/assets/)
+- [Works Panel](../ui-guide/works-panel/) — Works inside a project
+- [Concepts: Projects & Works](../concepts/projects-and-works/)
+- [API: Projects](../api/projects/), [API: Assets](../api/assets/)

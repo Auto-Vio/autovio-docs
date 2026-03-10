@@ -34,7 +34,7 @@ Side panels (e.g. Image Edit, Video Edit) let you change the prompt for a scene 
 
 ## Style and instructions
 
-- The backend builds a **style prefix** from the project/work style guide (see [Image Prompt](/system-prompts/image-prompt/), [Video Prompt](/system-prompts/video-prompt/)).
+- The backend builds a **style prefix** from the project/work style guide (see [Image Prompt](../system-prompts/image-prompt/), [Video Prompt](../system-prompts/video-prompt/)).
 - Final image prompt: `[style prefix] + [image_instruction or default] + [scene image_prompt]`.
 - Final video prompt: same idea for video. If `image_url` is an internal media URL, the backend resolves it with auth and passes a data URL to the video provider.
 
@@ -51,4 +51,4 @@ Media URLs in the UI that point to the API are loaded with auth (e.g. blob URLs)
 
 Go to **Step 5: Editor** to arrange clips on the timeline, add overlays and audio, and export.
 
-See [Editor step](/ui-guide/step-5-editor/) and [AI Endpoints](/api/ai-endpoints/).
+See [Editor step](../ui-guide/step-5-editor/) and [AI Endpoints](../api/ai-endpoints/).
