@@ -11,12 +11,12 @@ AutoVio uses several prompts to control AI behavior. They flow from project/work
 
 | Prompt | Default source | Override |
 |--------|----------------|----------|
-| **Scenario** | `DEFAULT_SCENARIO_SYSTEM_PROMPT` (shared) | Project `systemPrompt`; work can override. |
+| **Scenario** | Project type preset (or `DEFAULT_SCENARIO_SYSTEM_PROMPT`) | Project `systemPrompt`; work can override. |
 | **Analyzer** | `DEFAULT_ANALYZER_PROMPT` (shared) | Project `analyzerPrompt`. |
-| **Image** | Style prefix from style guide + `DEFAULT_IMAGE_INSTRUCTION` | Project/work `imageSystemPrompt` (or custom instruction in request). |
-| **Video** | Style prefix from style guide + `DEFAULT_VIDEO_INSTRUCTION` | Project/work `videoSystemPrompt` (or custom in request). |
+| **Image** | Project type preset (or style prefix + `DEFAULT_IMAGE_INSTRUCTION`) | Project/work `imageSystemPrompt` (or custom instruction in request). |
+| **Video** | Project type preset (or style prefix + `DEFAULT_VIDEO_INSTRUCTION`) | Project/work `videoSystemPrompt` (or custom in request). |
 
-When you create a new project, it gets the default scenario, analyzer, image, and video prompts from shared. New works inherit from the project; you can override at the work level.
+When you create a new project, prompts are initialized based on the **project type** (`blank`, `saas`, `news`, `social`, `ecommerce`, `educational`). Each type has optimized prompts for that content style. New works inherit from the project; you can override at the work level.
 
 ## Flow
 

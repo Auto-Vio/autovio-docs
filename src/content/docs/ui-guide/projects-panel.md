@@ -17,9 +17,18 @@ The **Projects** panel is where you see all your projects and create or manage t
 
 ## Create project
 
-When creating a project you typically set:
+When creating a project you set:
 
 - **Name** — Display name for the project.
+- **Project type** — Determines default prompts and style guide. Options:
+  - `blank` — Photorealistic defaults, fully customizable.
+  - `saas` — SaaS product demos (UI/UX focused).
+  - `news` — News/media (broadcast journalism style).
+  - `social` — Social media/marketing (trendy, engaging).
+  - `ecommerce` — E-commerce products (product showcase).
+  - `educational` — Tutorials (clear, instructional).
+
+Each project type comes with optimized system prompts, image/video instructions, and style guide presets.
 
 After creation you can edit in **Project settings**:
 
@@ -33,11 +42,15 @@ After creation you can edit in **Project settings**:
 
 In project settings, the **Project assets** section lets you:
 
-- **Upload** images, video, audio, or fonts (e.g. logo, watermark).
+- **Upload** images, video, audio, or fonts (e.g. logo, watermark, product photos).
 - **List** and filter by type (image, video, audio, font).
 - **Preview** and **delete** assets.
+- **Analyze** images with Vision AI to generate descriptions (for reference mode).
 
-Assets are reusable in any work in that project (e.g. as image overlays in the editor).
+Assets can be used in two ways:
+
+1. **Editor overlays** — As image overlays on the timeline.
+2. **Video generation** — Select assets when creating a work and choose how to use them (see [Init Step](../ui-guide/step-1-init/)).
 
 ## Templates
 

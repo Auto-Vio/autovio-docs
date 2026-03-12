@@ -5,7 +5,16 @@ description: Default scenario system prompt. Photorealistic scene-by-scene gener
 
 # Scenario Prompt
 
-The **scenario** system prompt instructs the LLM how to produce a scene-by-scene script. The default is stored as `DEFAULT_SCENARIO_SYSTEM_PROMPT` in the shared package and is used when a project is created.
+The **scenario** system prompt instructs the LLM how to produce a scene-by-scene script. The default depends on **project type**:
+
+- **blank** — Photorealistic, social media style (default `DEFAULT_SCENARIO_SYSTEM_PROMPT`)
+- **saas** — UI/UX focused, software demos, dashboard walkthroughs
+- **news** — Broadcast journalism, documentary style
+- **social** — Trendy, engaging, social media marketing
+- **ecommerce** — Product showcase, lifestyle photography
+- **educational** — Clear instruction, step-by-step tutorials
+
+Each preset configures the LLM to generate appropriate scene prompts for that content type.
 
 ## Role
 

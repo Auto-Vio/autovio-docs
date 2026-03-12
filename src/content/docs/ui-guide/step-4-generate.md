@@ -11,9 +11,16 @@ The **Generate** step produces an image and then a video for each scene.
 
 ## Per-scene flow
 
-1. **Generate image** — Backend uses the scene’s `image_prompt` (plus style guide prefix and image instruction) and calls the image provider. Status: `generating_image` → `image_ready`.
+**Normal/Reference mode:**
+1. **Generate image** — Backend uses the scene's `image_prompt` (plus style guide prefix and image instruction) and calls the image provider. Status: `generating_image` → `image_ready`.
 2. **Review** — You see the image; you can approve or edit the prompt and regenerate.
 3. **Generate video** — After approval, backend uses the image and `video_prompt` (plus style prefix and video instruction) and calls the video provider. Status: `generating_video` → `done` (or `error`).
+
+**Direct mode** (when assets are selected with `assetUsageMode: direct`):
+1. **Load image** — The actual asset image is loaded directly (no AI image generation). Status: `image_ready`.
+2. **Generate video** — Backend uses the asset image and `video_prompt` to generate video animation. Status: `generating_video` → `done`.
+
+In direct mode, you skip AI image generation entirely and use your uploaded assets as-is. This is useful for product photos, screenshots, or any content where you want exact control over the visuals.
 
 ## Status values
 
