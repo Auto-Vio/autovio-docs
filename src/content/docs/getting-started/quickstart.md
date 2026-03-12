@@ -16,7 +16,14 @@ This guide walks you through creating your first video with AutoVio in a few min
 
 1. Log in to the app.
 2. Click **New Project** and give it a name (e.g. "My First Video").
-3. Optionally set a **Style Guide** (tone, colors, tempo) in project settings for consistent look across videos.
+3. Choose a **Project Type** to start with optimized prompts:
+   - `blank` — Photorealistic defaults (fully customizable)
+   - `saas` — SaaS product demos (UI/UX focused)
+   - `social` — Social media marketing (trendy, engaging)
+   - `ecommerce` — Product showcases
+   - `news` — Broadcast journalism style
+   - `educational` — Tutorials and how-to videos
+4. Optionally upload **Project Assets** (product photos, logos) and set a **Style Guide** in project settings.
 
 ## Step 2: Create a work
 
@@ -25,6 +32,9 @@ This guide walks you through creating your first video with AutoVio in a few min
    - **Style transfer** — You will upload a reference video; AutoVio will replicate its style with your content.
    - **Content remix** — No reference needed; you describe the video in text.
 3. Enter **product name** (or subject) and optionally **description**, **target audience**, **language**, **duration**, and **scene count**.
+4. (Optional) Select **Project Assets** to use in video generation:
+   - **Reference mode** — AI learns style from your assets and generates similar images.
+   - **Direct mode** — Skip AI image generation; use your actual photos directly.
 
 ## Step 3: Reference video (style transfer only)
 

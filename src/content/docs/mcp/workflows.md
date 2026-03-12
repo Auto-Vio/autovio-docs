@@ -16,18 +16,17 @@ All examples assume:
 
 ### 1. Create a project
 
-Use **`autovio_projects_create`**:
+Use **`autovio_projects_create`** with a project type for optimized prompts:
 
 ```json
 {
   "name": "MCP Demo Project",
-  "styleGuide": {
-    "tone": "professional",
-    "color_palette": ["#FF5733", "#3498DB"],
-    "tempo": "medium"
-  }
+  "projectType": "ecommerce",
+  "knowledge": "We sell eco-friendly products for outdoor enthusiasts."
 }
 ```
+
+Project types: `blank`, `saas`, `news`, `social`, `ecommerce`, `educational`. Each comes with optimized prompts and style guide.
 
 Copy the returned `id` as `projectId`.
 
@@ -169,6 +168,59 @@ Use **`autovio_works_apply_template`**:
 ```
 
 The response is the updated work with merged editor state (timeline, overlays, export settings).
+
+## Workflow 5 – Asset-based video generation
+
+Use project assets directly in video generation instead of AI-generated images.
+
+### 1. List project assets
+
+Call **`autovio_assets_list`**:
+
+```json
+{
+  "projectId": "proj_123",
+  "type": "image"
+}
+```
+
+Note the `id` values for assets you want to use.
+
+### 2. (Optional) Analyze assets for reference mode
+
+For reference mode, analyze assets to generate descriptions:
+
+```json
+{
+  "projectId": "proj_123",
+  "assetIds": ["asset_1", "asset_2", "asset_3"]
+}
+```
+
+Use **`autovio_assets_analyze_batch`**. Descriptions help AI generate similar-looking images.
+
+### 3. Create work with assets
+
+Use **`autovio_works_create`** with asset selection:
+
+```json
+{
+  "projectId": "proj_123",
+  "name": "Product Showcase",
+  "mode": "content_remix",
+  "productName": "EcoBottle",
+  "selectedAssetIds": ["asset_1", "asset_2", "asset_3"],
+  "assetUsageMode": "direct"
+}
+```
+
+Asset usage modes:
+- `direct` — Use actual asset images, skip AI image generation. Scene count auto-adjusts to asset count.
+- `reference` — AI generates new images matching asset style (requires analyzed assets).
+
+### 4. Generate scenario and scenes
+
+With `direct` mode, scenario generation creates scenes matching your asset count. Image generation is skipped; only video (animation) is generated from your actual photos.
 
 ## See also
 
