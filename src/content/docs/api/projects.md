@@ -24,6 +24,7 @@ Projects are the top-level container for style guide, prompts, assets, and works
 | id | string | Project ID. |
 | userId | string | Owner user ID. |
 | name | string | Project name. |
+| projectType | string | Project type: `blank`, `saas`, `news`, `social`, `ecommerce`, `educational`. Determines default prompts. |
 | systemPrompt | string | Default scenario system prompt. |
 | knowledge | string | Extra context for LLM. |
 | styleGuide | object | Optional StyleGuide (tone, color_palette, tempo, camera_style, brand_voice, must_include, must_avoid). |
@@ -33,6 +34,21 @@ Projects are the top-level container for style guide, prompts, assets, and works
 | createdAt | number | Unix timestamp. |
 | updatedAt | number | Unix timestamp. |
 
+## Project Types
+
+When creating a project, you can specify a `projectType` to start with optimized prompts and style settings:
+
+| Type | Description |
+|------|-------------|
+| `blank` | Default photorealistic style. Fully customizable. |
+| `saas` | SaaS product demos. Modern UI/UX focused, dashboard walkthroughs. |
+| `news` | News/media content. Broadcast journalism, documentary style. |
+| `social` | Social media/marketing. Engaging, trendy, brand-focused. |
+| `ecommerce` | E-commerce products. Product showcases, lifestyle shots. |
+| `educational` | Educational/tutorial. Clear instruction, step-by-step guides. |
+
+Each type comes with pre-configured `systemPrompt`, `imageSystemPrompt`, `videoSystemPrompt`, and `styleGuide` optimized for that content type.
+
 ## Create project (POST /api/projects)
 
 **Request body:**
@@ -40,13 +56,22 @@ Projects are the top-level container for style guide, prompts, assets, and works
 ```json
 {
   "name": "My Project",
-  "systemPrompt": "...",
-  "knowledge": "",
-  "styleGuide": { "tone": "professional", "color_palette": ["#333"] }
+  "projectType": "saas",
+  "knowledge": "We are building a project management tool..."
 }
 ```
 
-Only `name` is required. Other fields get defaults (e.g. shared default prompts) if omitted.
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| name | string | No | Project name (default: "Yeni Proje"). |
+| projectType | string | No | One of: `blank`, `saas`, `news`, `social`, `ecommerce`, `educational`. Default: `blank`. |
+| systemPrompt | string | No | Custom scenario prompt (overrides preset). |
+| knowledge | string | No | Brand context for AI. |
+| styleGuide | object | No | Style settings (overrides preset defaults). |
+| imageSystemPrompt | string | No | Custom image instruction (overrides preset). |
+| videoSystemPrompt | string | No | Custom video instruction (overrides preset). |
+
+When `projectType` is specified, the project is initialized with optimized prompts and style guide for that content type. You can still override individual fields.
 
 **Response:** Full project object with `id`, `createdAt`, `updatedAt`.
 

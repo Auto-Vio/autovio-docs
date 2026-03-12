@@ -30,11 +30,35 @@ A **work** is one video pipeline inside a project. Endpoints are under `/api/pro
   "targetAudience": "Consumers",
   "language": "en",
   "videoDuration": 30,
-  "sceneCount": 5
+  "sceneCount": 5,
+  "selectedAssetIds": ["asset_logo", "asset_product1"],
+  "assetUsageMode": "direct"
 }
 ```
 
-`name` and `mode` are required; others optional. New work gets project’s default prompts and instructions.
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| name | string | No | Work name. |
+| mode | string | No | `style_transfer` or `content_remix`. |
+| productName | string | No | Product/subject name. |
+| productDescription | string | No | Description. |
+| targetAudience | string | No | Target audience. |
+| language | string | No | Language code (e.g. `en`, `tr`). |
+| videoDuration | number | No | Target duration in seconds. |
+| sceneCount | number | No | Number of scenes to generate. |
+| selectedAssetIds | string[] | No | Asset IDs to use in video generation. |
+| assetUsageMode | string | No | How to use assets: `reference` or `direct`. |
+
+New work inherits project's default prompts and instructions.
+
+## Asset Usage Modes
+
+When you specify `selectedAssetIds`, control how those assets are used with `assetUsageMode`:
+
+| Mode | Description |
+|------|-------------|
+| `reference` | AI analyzes assets and generates similar-looking images. Best for style consistency. Assets should have descriptions (use the analyze endpoint first). |
+| `direct` | Skip AI image generation. Use actual asset images directly and only generate video (animation). Best for product photos, screenshots. Scene count auto-adjusts to match asset count. |
 
 ## Media endpoints
 
@@ -52,9 +76,10 @@ All require auth and appropriate scope. Scene `index` is 0-based. Media URLs ret
 
 ## Work object (summary)
 
-Includes: id, projectId, name, mode, productName, productDescription, targetAudience, language, videoDuration, sceneCount, currentStep, hasReferenceVideo, systemPrompt, analyzerPrompt, imageSystemPrompt, videoSystemPrompt, analysis, scenes, generatedScenes, editorState, createdAt, updatedAt.
+Includes: id, projectId, name, mode, productName, productDescription, targetAudience, language, videoDuration, sceneCount, selectedAssetIds, assetUsageMode, currentStep, hasReferenceVideo, systemPrompt, analyzerPrompt, imageSystemPrompt, videoSystemPrompt, analysis, scenes, generatedScenes, editorState, createdAt, updatedAt.
 
 ## See also
 
 - [Concepts: Projects & Works](../concepts/projects-and-works/)
 - [AI Endpoints](../api/ai-endpoints/) — Analyze, scenario, generate, export
+- [Assets API](../api/assets/) — Upload and manage assets for video generation

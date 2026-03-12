@@ -73,27 +73,25 @@ List all projects for the current user. Returns an array of project meta objects
 
 ### autovio_projects_create
 
-Create a new project (container for works, style guide, and prompts).
+Create a new project (container for works, style guide, and prompts). Use `projectType` to start with optimized presets.
 
 | Parameter | Type | Required | Description |
 |----------|------|----------|-------------|
 | name | string | No | Project name (default: `"Yeni Proje"`). |
-| systemPrompt | string | No | Custom scenario system prompt. |
+| projectType | string | No | Project type: `blank`, `saas`, `news`, `social`, `ecommerce`, `educational`. Determines default prompts. |
+| systemPrompt | string | No | Custom scenario system prompt (overrides preset). |
 | knowledge | string | No | Brand context or background info. |
 | styleGuide | object | No | Style guide (tone, color_palette, tempo, camera_style, brand_voice, must_include, must_avoid). |
-| imageSystemPrompt | string | No | Extra instruction for image generation. |
-| videoSystemPrompt | string | No | Extra instruction for video generation. |
+| imageSystemPrompt | string | No | Extra instruction for image generation (overrides preset). |
+| videoSystemPrompt | string | No | Extra instruction for video generation (overrides preset). |
 
 **Example args:**
 
 ```json
 {
-  "name": "Summer Campaign",
-  "styleGuide": {
-    "tone": "professional",
-    "color_palette": ["#FF5733", "#3498DB"],
-    "tempo": "medium"
-  }
+  "name": "Product Demo",
+  "projectType": "saas",
+  "knowledge": "We are building a project management tool for teams."
 }
 ```
 
@@ -143,7 +141,7 @@ List all works (video pipelines) in a project.
 
 ### autovio_works_create
 
-Create a new work inside a project.
+Create a new work inside a project. Use `selectedAssetIds` with `assetUsageMode` to incorporate project assets.
 
 | Parameter | Type | Required | Description |
 |----------|------|----------|-------------|
@@ -156,6 +154,8 @@ Create a new work inside a project.
 | language | string | No | Language code (e.g. `en`, `tr`). |
 | videoDuration | number | No | Target duration in seconds. |
 | sceneCount | number | No | Number of scenes to generate. |
+| selectedAssetIds | string[] | No | Asset IDs from the project to use in video generation. |
+| assetUsageMode | string | No | How to use assets: `"reference"` (AI learns style) or `"direct"` (use actual images). |
 
 **Example args:**
 
@@ -165,7 +165,9 @@ Create a new work inside a project.
   "name": "Product Demo",
   "mode": "content_remix",
   "productName": "EcoBottle",
-  "sceneCount": 5
+  "sceneCount": 5,
+  "selectedAssetIds": ["asset_product1", "asset_product2"],
+  "assetUsageMode": "direct"
 }
 ```
 
@@ -202,6 +204,8 @@ Update work settings, scenes, or editor state.
 | language | string | No | Language code. |
 | videoDuration | number | No | Duration in seconds. |
 | sceneCount | number | No | Number of scenes. |
+| selectedAssetIds | string[] | No | Asset IDs from the project to use in video generation. |
+| assetUsageMode | string | No | How to use assets: `"reference"` or `"direct"`. |
 | analysis | any | No | AnalysisResult. |
 | scenes | object[] | No | Scene list (scenario output). |
 | generatedScenes | any[] | No | Generated media status per scene. |
@@ -355,6 +359,62 @@ Delete a template from a project.
 |----------|------|----------|-------------|
 | projectId | string | Yes | Project ID. |
 | templateId | string | Yes | Template ID to delete. |
+
+## Assets
+
+### autovio_assets_list
+
+List all assets in a project. Use these assets with `selectedAssetIds` in works.
+
+| Parameter | Type | Required | Description |
+|----------|------|----------|-------------|
+| projectId | string | Yes | Project ID. |
+| type | string | No | Filter by type: `"image"`, `"video"`, `"audio"`, `"font"`. |
+
+### autovio_assets_get
+
+Get metadata for a specific asset.
+
+| Parameter | Type | Required | Description |
+|----------|------|----------|-------------|
+| projectId | string | Yes | Project ID. |
+| assetId | string | Yes | Asset ID. |
+
+### autovio_assets_analyze
+
+Analyze an image asset with Vision AI to generate a description. Required for effective `reference` mode usage.
+
+| Parameter | Type | Required | Description |
+|----------|------|----------|-------------|
+| projectId | string | Yes | Project ID. |
+| assetId | string | Yes | Asset ID (must be an image). |
+
+**Example args:**
+
+```json
+{
+  "projectId": "proj_123",
+  "assetId": "asset_logo"
+}
+```
+
+### autovio_assets_analyze_batch
+
+Analyze multiple image assets with Vision AI in batch.
+
+| Parameter | Type | Required | Description |
+|----------|------|----------|-------------|
+| projectId | string | Yes | Project ID. |
+| assetIds | string[] | Yes | Array of asset IDs to analyze (must be images). |
+
+### autovio_assets_delete
+
+Delete an asset from the project.
+
+| Parameter | Type | Required | Description |
+|----------|------|----------|-------------|
+| projectId | string | Yes | Project ID. |
+| assetId | string | Yes | Asset ID to delete. |
 
 ## See also
 

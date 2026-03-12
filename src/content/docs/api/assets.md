@@ -21,9 +21,11 @@ Assets are stored per project and exposed via `/api/projects/:projectId/assets`.
 | GET | `/api/projects/:projectId/assets` | Yes | projects:read | List assets (optional `type` filter). |
 | POST | `/api/projects/:projectId/assets` | Yes | projects:write | Upload an asset (multipart). |
 | GET | `/api/projects/:projectId/assets/:assetId/meta` | Yes | projects:read | Get asset metadata (JSON). |
-| PUT | `/api/projects/:projectId/assets/:assetId` | Yes | projects:write | Update asset metadata (name, tags). |
+| PUT | `/api/projects/:projectId/assets/:assetId` | Yes | projects:write | Update asset metadata (name, tags, description). |
 | GET | `/api/projects/:projectId/assets/:assetId` | Yes | projects:read | Get asset file (binary stream). |
 | DELETE | `/api/projects/:projectId/assets/:assetId` | Yes | projects:write | Delete asset and its file. |
+| POST | `/api/projects/:projectId/assets/:assetId/analyze` | Yes | projects:write | Analyze image with Vision AI to generate description. |
+| POST | `/api/projects/:projectId/assets/analyze-batch` | Yes | projects:write | Analyze multiple images in batch. |
 
 All routes require authentication. Scopes are checked via user JWT or API token.
 
@@ -45,6 +47,7 @@ All routes require authentication. Scopes are checked via user JWT or API token.
 | duration | number? | Video/audio duration in seconds (when known). |
 | tags | string[]? | Optional tags for filtering (e.g. `["logo", "brand"]`). |
 | thumbnail | string? | Optional thumbnail reference. |
+| description | string? | AI-generated description (from analyze endpoint). Used in `reference` mode. |
 | createdAt | number | Unix timestamp (ms). |
 | updatedAt | number | Unix timestamp (ms). |
 | url | string | URL for the file: `/api/projects/:projectId/assets/:assetId`. |
@@ -105,6 +108,7 @@ Upload an asset using `multipart/form-data`.
   - `file` — required, the binary file
   - `name` — optional, display name (defaults to original filename)
   - `tags` — optional, JSON string or repeated field (e.g. `["logo","brand"]`)
+  - `description` — optional, manual description (or use analyze endpoint for AI-generated)
 
 **Example:**
 
@@ -192,6 +196,64 @@ Delete metadata and the underlying file from disk.
 - `404` if the asset does not exist.
 
 Be careful: works and templates that referenced this asset will no longer be able to render it.
+
+## Analyze asset (POST /api/projects/:projectId/assets/:assetId/analyze)
+
+Analyze an image asset with Vision AI to generate a description. The description is used in `reference` mode to help AI understand the visual style when generating new images.
+
+**Headers:**
+
+| Header | Required | Description |
+|--------|----------|-------------|
+| x-api-key | Yes | AI provider API key. |
+| x-vision-provider | No | Provider ID (default: `gemini`). |
+| x-model-id | No | Model ID. |
+
+**Response:**
+
+```json
+{
+  "assetId": "asset_logo",
+  "description": "Modern minimalist logo with purple gradient, clean geometric shapes, professional SaaS aesthetic"
+}
+```
+
+The description is automatically saved to the asset metadata.
+
+## Analyze batch (POST /api/projects/:projectId/assets/analyze-batch)
+
+Analyze multiple image assets in one request.
+
+**Request body:**
+
+```json
+{
+  "assetIds": ["asset_1", "asset_2", "asset_3"]
+}
+```
+
+**Response:**
+
+```json
+{
+  "results": [
+    { "assetId": "asset_1", "description": "..." },
+    { "assetId": "asset_2", "description": "..." },
+    { "assetId": "asset_3", "error": "Asset not found or not an image" }
+  ]
+}
+```
+
+## Usage in video generation
+
+Assets can be used in video generation via the Works API:
+
+1. Upload assets to the project
+2. (For reference mode) Analyze assets to generate descriptions
+3. Create a work with `selectedAssetIds` and `assetUsageMode`
+4. Generate scenario and scenes
+
+See [Works API](../api/works/) for details on `assetUsageMode`.
 
 ## Usage in the editor & templates
 
