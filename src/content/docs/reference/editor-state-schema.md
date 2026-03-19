@@ -131,6 +131,8 @@ Top-level structure stored on a work:
 | height | number | Yes | Output height in pixels. |
 | fps | number | Yes | Frames per second. |
 
+When a work is opened in the editor for the first time (no saved `editorState`), `exportSettings.width` and `exportSettings.height` are initialized from the work's `resolution` field. If `resolution` is not set, it defaults to `{ width: 1080, height: 1920 }` (Portrait 9:16).
+
 ## Where it is stored
 
 - On the **Work** model (`works.editorState`).

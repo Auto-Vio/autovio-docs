@@ -32,7 +32,8 @@ A **work** is one video pipeline inside a project. Endpoints are under `/api/pro
   "videoDuration": 30,
   "sceneCount": 5,
   "selectedAssetIds": ["asset_logo", "asset_product1"],
-  "assetUsageMode": "direct"
+  "assetUsageMode": "direct",
+  "resolution": { "width": 1080, "height": 1920 }
 }
 ```
 
@@ -48,8 +49,32 @@ A **work** is one video pipeline inside a project. Endpoints are under `/api/pro
 | sceneCount | number | No | Number of scenes to generate. |
 | selectedAssetIds | string[] | No | Asset IDs to use in video generation. |
 | assetUsageMode | string | No | How to use assets: `reference` or `direct`. |
+| resolution | object | No | Output resolution `{ width, height }`. Determines image/video provider sizing and initial `exportSettings`. Default: `{ width: 1080, height: 1920 }` (Portrait 9:16). |
 
 New work inherits project's default prompts and instructions.
+
+## Resolution
+
+The `resolution` field controls the output dimensions for image and video generation in this work. It is stored on the work and passed to each provider during generation.
+
+**Standard presets:**
+
+| Preset | `width` | `height` | Description |
+|--------|---------|----------|-------------|
+| Portrait 9:16 | 1080 | 1920 | Default. Vertical/mobile format. |
+| Landscape 16:9 | 1920 | 1080 | Horizontal/widescreen format. |
+| Square 1:1 | 1080 | 1080 | Square format. |
+
+**Provider mapping:**
+
+| Provider | Portrait 9:16 | Landscape 16:9 | Square 1:1 |
+|----------|--------------|----------------|------------|
+| DALL-E 3 (`dalle`) | `size: "1024x1792"` | `size: "1792x1024"` | `size: "1024x1024"` |
+| Runway (`runway`) | `ratio: "768:1280"` | `ratio: "1280:768"` | *(omitted)* |
+| Gemini Veo (`gemini` video) | `aspectRatio: "9:16"` | `aspectRatio: "16:9"` | `aspectRatio: "1:1"` |
+| Gemini Image (`gemini` image) | *(no resolution parameter)* | *(no resolution parameter)* | *(no resolution parameter)* |
+
+The `exportSettings` in the work's `editorState` is also initialized from `resolution` when a new work is created.
 
 ## Asset Usage Modes
 
@@ -76,7 +101,7 @@ All require auth and appropriate scope. Scene `index` is 0-based. Media URLs ret
 
 ## Work object (summary)
 
-Includes: id, projectId, name, mode, productName, productDescription, targetAudience, language, videoDuration, sceneCount, selectedAssetIds, assetUsageMode, currentStep, hasReferenceVideo, systemPrompt, analyzerPrompt, imageSystemPrompt, videoSystemPrompt, analysis, scenes, generatedScenes, editorState, createdAt, updatedAt.
+Includes: id, projectId, name, mode, productName, productDescription, targetAudience, language, videoDuration, sceneCount, selectedAssetIds, assetUsageMode, resolution, currentStep, hasReferenceVideo, systemPrompt, analyzerPrompt, imageSystemPrompt, videoSystemPrompt, analysis, scenes, generatedScenes, editorState, createdAt, updatedAt.
 
 ## See also
 

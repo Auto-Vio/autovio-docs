@@ -42,6 +42,7 @@ A **work** is one video pipeline inside a project. Each work has:
 
 - **Name**, **mode** (`style_transfer` or `content_remix`)
 - **Product/subject info** — productName, productDescription, targetAudience, language, videoDuration, sceneCount
+- **Resolution** — Output dimensions for image/video generation and export (`{ width, height }`). Default: `{ width: 1080, height: 1920 }` (Portrait 9:16)
 - **Reference video** (optional) — For style transfer; uploaded and analyzed in the pipeline
 - **Selected assets** — Asset IDs from the project to use in video generation
 - **Asset usage mode** — How to use selected assets: `reference` (AI learns style) or `direct` (use actual images)

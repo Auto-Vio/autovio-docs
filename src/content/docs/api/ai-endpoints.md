@@ -68,9 +68,18 @@ Generate one image from a text prompt.
   "prompt": "Photo of a bottle on a table...",
   "negative_prompt": "blurry, text",
   "image_instruction": "...",
-  "styleGuide": { ... }
+  "styleGuide": { ... },
+  "resolution": { "width": 1080, "height": 1920 }
 }
 ```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| prompt | string | Yes | Image generation prompt. |
+| negative_prompt | string | No | What to avoid in the image. |
+| image_instruction | string | No | Extra style instructions appended to the prompt. |
+| styleGuide | object | No | Brand style guide. |
+| resolution | object | No | Output resolution `{ width, height }`. Maps to DALL-E 3 `size` (portrait→`1024x1792`, landscape→`1792x1024`, square→`1024x1024`). No effect on Gemini image provider (no resolution parameter). |
 
 **Response:** `{ imageUrl: string }` — URL to the generated image (or upload to work media and return that URL).
 
@@ -92,9 +101,19 @@ Image-to-video: animate an image with a prompt.
   "prompt": "Slow push in toward the bottle",
   "duration": 5,
   "video_instruction": "...",
-  "styleGuide": { ... }
+  "styleGuide": { ... },
+  "resolution": { "width": 1080, "height": 1920 }
 }
 ```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| image_url | string | Yes | Source image URL or internal media path. |
+| prompt | string | Yes | Motion/animation prompt. |
+| duration | number | No | Duration in seconds (default: 5). |
+| video_instruction | string | No | Extra instructions appended to the prompt. |
+| styleGuide | object | No | Brand style guide. |
+| resolution | object | No | Output resolution `{ width, height }`. Maps to Runway `ratio` (portrait→`"768:1280"`, landscape→`"1280:768"`, square→omitted) or Gemini Veo `aspectRatio` (`"9:16"`, `"16:9"`, `"1:1"`). |
 
 If `image_url` is an internal media URL, the backend resolves it with auth and passes a data URL to the provider.
 
