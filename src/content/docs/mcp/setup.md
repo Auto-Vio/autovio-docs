@@ -9,7 +9,7 @@ The AutoVio MCP server is published on npm as [`autovio-mcp`](https://www.npmjs.
 
 ## Installation
 
-![AutoVio MCP Setup](../../../public/setup.gif)
+![AutoVio MCP Setup](/autovio-docs/setup.gif)
 
 No installation required. `npx` downloads and runs the latest version automatically:
 
