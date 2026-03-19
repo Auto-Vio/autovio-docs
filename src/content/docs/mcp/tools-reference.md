@@ -156,6 +156,7 @@ Create a new work inside a project. Use `selectedAssetIds` with `assetUsageMode`
 | sceneCount | number | No | Number of scenes to generate. |
 | selectedAssetIds | string[] | No | Asset IDs from the project to use in video generation. |
 | assetUsageMode | string | No | How to use assets: `"reference"` (AI learns style) or `"direct"` (use actual images). |
+| resolution | object | No | Output resolution `{ width, height }`. Presets: Portrait 9:16 `{width:1080,height:1920}` (default), Landscape 16:9 `{width:1920,height:1080}`, Square 1:1 `{width:1080,height:1080}`. |
 
 **Example args:**
 
@@ -167,7 +168,8 @@ Create a new work inside a project. Use `selectedAssetIds` with `assetUsageMode`
   "productName": "EcoBottle",
   "sceneCount": 5,
   "selectedAssetIds": ["asset_product1", "asset_product2"],
-  "assetUsageMode": "direct"
+  "assetUsageMode": "direct",
+  "resolution": { "width": 1920, "height": 1080 }
 }
 ```
 
@@ -206,6 +208,7 @@ Update work settings, scenes, or editor state.
 | sceneCount | number | No | Number of scenes. |
 | selectedAssetIds | string[] | No | Asset IDs from the project to use in video generation. |
 | assetUsageMode | string | No | How to use assets: `"reference"` or `"direct"`. |
+| resolution | object | No | Output resolution `{ width, height }`. Presets: Portrait 9:16 `{width:1080,height:1920}`, Landscape 16:9 `{width:1920,height:1080}`, Square 1:1 `{width:1080,height:1080}`. |
 | analysis | any | No | AnalysisResult. |
 | scenes | object[] | No | Scene list (scenario output). |
 | generatedScenes | any[] | No | Generated media status per scene. |
@@ -284,6 +287,7 @@ Generate an image from a text prompt.
 | negative_prompt | string | No | What to avoid in the image. |
 | image_instruction | string | No | Extra style instructions. |
 | styleGuide | object | No | Style guide. |
+| resolution | object | No | Output resolution `{ width, height }`. Maps to DALL-E 3 `size`: portrait→`1024x1792`, landscape→`1792x1024`, square→`1024x1024`. No effect on Gemini image provider. |
 
 ### autovio_ai_generate_video
 
@@ -296,6 +300,7 @@ Generate a video from an image (image-to-video).
 | duration | number | No | Duration in seconds (default: 5). |
 | video_instruction | string | No | Extra video instructions. |
 | styleGuide | object | No | Style guide. |
+| resolution | object | No | Output resolution `{ width, height }`. Maps to Runway `ratio` (portrait→`"768:1280"`, landscape→`"1280:768"`, square→omitted) or Gemini Veo `aspectRatio` (`"9:16"`, `"16:9"`, `"1:1"`). |
 
 ## Providers
 

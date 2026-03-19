@@ -1,11 +1,11 @@
 ---
 title: MCP Overview
-description: Use AutoVio through the Model Context Protocol (MCP) with Claude Desktop and other MCP clients.
+description: Use AutoVio through the Model Context Protocol (MCP) with Claude Code, Claude Desktop, Cursor, and other MCP clients.
 ---
 
 # MCP Overview
 
-The **AutoVio MCP server** lets you call the AutoVio API directly from MCP-compatible clients such as Claude Desktop. It exposes tools for:
+The **AutoVio MCP server** lets you call the AutoVio API directly from MCP-compatible clients such as Claude Code, Claude Desktop, and Cursor. It exposes tools for:
 
 - Health checks
 - Authentication (login/register/me)
@@ -17,12 +17,16 @@ Instead of writing HTTP requests by hand, you call MCP tools like `autovio_proje
 
 ## How it works
 
-- The MCP server is a Node.js process that:
-  - Loads configuration (AutoVio base URL, API token, AI models and keys).
-  - Creates an `AutoVioClient` to talk to the AutoVio REST API.
-  - Registers tools with the MCP SDK.
-  - Communicates with the MCP client over **stdio**.
-- Clients (e.g. Claude Desktop) start the server with `"command": "node", "args": [".../dist/index.js", ...]` in their MCP config.
+The MCP server is published on npm as [`autovio-mcp`](https://www.npmjs.com/package/autovio-mcp) and runs via `npx` — no clone or build needed.
+
+When started, the server:
+
+1. Loads configuration (AutoVio base URL, API token, AI models and keys).
+2. Creates an `AutoVioClient` to talk to the AutoVio REST API.
+3. Registers tools with the MCP SDK.
+4. Communicates with the MCP client over **stdio**.
+
+Clients start the server with `"command": "npx", "args": ["-y", "autovio-mcp", ...]` in their MCP config.
 
 When you call a tool in the MCP client, the server:
 
@@ -31,8 +35,6 @@ When you call a tool in the MCP client, the server:
 3. Returns formatted JSON text back to the client.
 
 ## Tool groups
-
-From the MCP client’s perspective, tools are grouped roughly as:
 
 | Group | Examples | Description |
 |-------|----------|-------------|
@@ -50,7 +52,7 @@ See [MCP Tools Reference](../mcp/tools-reference/) for full input schemas and us
 
 Use **MCP** when:
 
-- You are inside an AI IDE or assistant (Claude Desktop, Cursor, etc.).
+- You are inside an AI IDE or assistant (Claude Code, Claude Desktop, Cursor, etc.).
 - You want the assistant to call tools directly without managing HTTP and auth.
 
 Use the **REST API** when:
@@ -68,4 +70,3 @@ Use the **REST API** when:
 - [MCP Setup](../mcp/setup/)
 - [MCP Tools Reference](../mcp/tools-reference/)
 - [API Overview](../api/overview/)
-

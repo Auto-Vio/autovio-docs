@@ -5,35 +5,34 @@ description: Install and run the AutoVio MCP server. Configuration, CLI flags, a
 
 # MCP Setup
 
-This page shows how to install and run the **AutoVio MCP server** so MCP clients (like Claude Desktop) can call the AutoVio API.
+The AutoVio MCP server is published on npm as [`autovio-mcp`](https://www.npmjs.com/package/autovio-mcp). No clone or build step is needed — run it directly with `npx`.
 
 ## Installation
 
-From the `AutoVio-MCP` directory:
+No installation required. `npx` downloads and runs the latest version automatically:
 
 ```bash
-npm install
-npm run build
+npx autovio-mcp --autovio-base-url http://localhost:3001 --autovio-api-token YOUR_TOKEN
 ```
 
-This compiles the TypeScript sources into `dist/` and prepares the CLI entry point.
+To install globally and skip the `npx` prefix:
+
+```bash
+npm install -g autovio-mcp
+```
 
 ## Running the server
 
-You can run the MCP server directly with Node:
-
 ```bash
-# Default (env or default baseUrl/token)
-node dist/index.js
+# With CLI flags
+npx autovio-mcp --autovio-base-url http://localhost:3001 --autovio-api-token YOUR_TOKEN
 
-# With config file
-node dist/index.js --config examples/config.example.json
+# With a config file
+npx autovio-mcp --config /path/to/config.json
 
-# Development (watch)
-npm run dev
+# With environment variables (no flags needed)
+AUTOVIO_BASE_URL=http://localhost:3001 AUTOVIO_API_TOKEN=your-token npx autovio-mcp
 ```
-
-The entry point (`src/index.ts`) loads configuration, sets the log level, and then calls `startServer` with stdio transport.
 
 ## Configuration sources and precedence
 
@@ -46,13 +45,11 @@ Configuration is merged from four sources with this priority (highest first):
 
 ### 1. CLI parameters
 
-CLI flags cover AutoVio connection, logging, and the 4 AI model+key pairs:
-
 | Flag | Description |
 |------|-------------|
-| `--config` | Path to JSON config file. |
 | `--autovio-base-url` | AutoVio API base URL. |
 | `--autovio-api-token` | AutoVio API token. |
+| `--config` | Path to JSON config file. |
 | `--vision-model` | Vision model (e.g. `gemini-2.0-flash-exp`). |
 | `--vision-api-key` | Vision API key. |
 | `--llm-model` | LLM model (e.g. `gemini-2.5-flash`). |
@@ -69,20 +66,18 @@ CamelCase variants like `--autovioBaseUrl` are also accepted.
 
 ### 2. Environment variables
 
-The server reads the following env variables:
-
-- `AUTOVIO_BASE_URL`
-- `AUTOVIO_API_TOKEN`
-- `AUTOVIO_VISION_MODEL`, `AUTOVIO_VISION_API_KEY`
-- `AUTOVIO_LLM_MODEL`, `AUTOVIO_LLM_API_KEY`
-- `AUTOVIO_IMAGE_MODEL`, `AUTOVIO_IMAGE_API_KEY`
-- `AUTOVIO_VIDEO_MODEL`, `AUTOVIO_VIDEO_API_KEY`
-- `AUTOVIO_LOG_LEVEL`
-- `AUTOVIO_MCP_CONFIG` (JSON config string)
+```
+AUTOVIO_BASE_URL        AUTOVIO_API_TOKEN
+AUTOVIO_VISION_MODEL    AUTOVIO_VISION_API_KEY
+AUTOVIO_LLM_MODEL       AUTOVIO_LLM_API_KEY
+AUTOVIO_IMAGE_MODEL     AUTOVIO_IMAGE_API_KEY
+AUTOVIO_VIDEO_MODEL     AUTOVIO_VIDEO_API_KEY
+AUTOVIO_LOG_LEVEL       AUTOVIO_MCP_CONFIG
+```
 
 ### 3. Config file
 
-You can pass a JSON config via `--config` or load it through env. Example (`examples/config.example.json`):
+Pass a JSON config via `--config`. Example (`examples/config.example.json` in the [autovio-mcp](https://github.com/Auto-Vio/autovio-mcp) repo):
 
 ```json
 {
@@ -123,27 +118,18 @@ You can pass a JSON config via `--config` or load it through env. Example (`exam
 
 ### 4. Default structure
 
-At runtime the merged config has this shape:
-
 | Section | Fields | Description |
 |---------|--------|-------------|
 | `server` | `name`, `version` | MCP server metadata. |
 | `autovio` | `baseUrl`, `apiToken` | AutoVio REST API connection. |
-| `providers` | `vision`, `llm`, `image`, `video` | Model+API key pairs for each AI category. |
+| `providers` | `vision`, `llm`, `image`, `video` | Model + API key pairs for each AI role. |
 | `features` | `enableResources`, `enablePrompts`, `cacheResponses`, `logLevel` | MCP feature flags and logging. |
-
-Each provider entry is:
-
-| Field | Type | Description |
-|-------|------|-------------|
-| `model` | string | Model name (e.g. `gemini-2.0-flash-exp`). |
-| `apiKey` | string | API key for that model. |
 
 The server derives the provider ID from the model name (e.g. `gemini`, `claude`, `openai`) before calling the AutoVio API.
 
 ## Requirements
 
-- Node.js >= 18 (enforced by `engines.node` in `package.json`)
+- Node.js >= 18
 - A running AutoVio backend (see [Installation](../getting-started/installation/))
 - An AutoVio API token or user credentials
 - API keys for the AI providers you want to use
@@ -153,4 +139,3 @@ The server derives the provider ID from the model name (e.g. `gemini`, `claude`,
 - [MCP Overview](../mcp/overview/)
 - [Claude Desktop Integration](../mcp/claude-desktop/)
 - [MCP Tools Reference](../mcp/tools-reference/)
-
